@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jersey+20+Charted&family=Rye&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Jersey+15&family=Libre+Barcode+128+Text&display=swap");
+      .rye-regular {
+        font-family: "Rye", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .jersey-15-regular {
+        font-family: "Jersey 15", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      fieldset {
+        max-width: 35%;
+      }
+    </style>
+    <title>Pita font</title>
+  </head>
+  <body>
+    <h1 class="rye-regular">Pitagorasz tétele</h1>
+    <img src="pitagorasz-tetel.png" alt="Pitagorasz tétele" />
+    <p class="jersey-15-regular">
+      A tétel. Bármely derékszögű háromszög leghosszabb oldalának (átfogójának)
+      négyzete megegyezik a másik két oldal (a befogók) négyzetösszegével.
+      Tehát: ha egy háromszög derékszögű, akkor a leghosszabb oldalára emelt
+      négyzet területe a másik két oldalra emelt négyzetek területének
+      összegével egyenlő.
+    </p>
+    <fieldset>
+      <legend>Adatok:</legend>
+      <input type="number" placeholder="a oldal" id="a" />
+      <br />
+      <br />
+      <input type="number" placeholder="b oldal" id="b" />
+      <br />
+      <br />
+      <input type="number" placeholder="c oldal" id="c" disabled= />
+      <br />
+      <br />
+      <input type="button" value="Számold!" onclick="kiszamolas()" />
+    </fieldset>
+    <script>
+      function kiszamolas() {
+        var aOldal = parseFloat(document.getElementById("a").value);
+        var bOldal = parseFloat(document.getElementById("b").value);
+        var cOldal = Math.sqrt(Math.pow(aOldal, 2) + Math.pow(bOldal, 2));
+
+        document.getElementById("c").value = cOldal.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
